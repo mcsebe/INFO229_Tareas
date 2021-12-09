@@ -1,7 +1,9 @@
 from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
+from sqlalchemy.sql.sqltypes import Date
 
-from .database import Base #Se importa el objeto Base desde el archivo database.py
+from database import Base #Se importa el objeto Base desde el archivo database.py
+
 
 class New(Base): 
 
@@ -21,6 +23,6 @@ class Category(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     category = Column(String(50), index=True)
-    new_id = Column(Integer, ForeignKey("news.id"))
+    new_title = Column(String(50), ForeignKey("news.title"))
 
     owner = relationship("New", back_populates="categorys")

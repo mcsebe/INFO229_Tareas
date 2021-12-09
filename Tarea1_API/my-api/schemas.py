@@ -13,7 +13,7 @@ class CategoryCreate(CategoryBase):
 
 class Category(CategoryBase):
     id: int
-    new_id: int
+    new_title: str
 
     class Config:
         orm_mode = True

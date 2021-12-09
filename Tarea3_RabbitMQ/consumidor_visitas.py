@@ -21,7 +21,7 @@ def callback(ch, method, properties, body):
     print(" [x] %r" % body)
     info = body.decode('UTF-8')
     info = info[16:len(info)-1]
-    print("Número de visitas en la pagina desde 01/01/2000 hasta 01/01/2021: ", end="")
+    print("Número de visitas en la pagina en ingles desde 01/01/2000 hasta 01/01/2021: ", end="")
     vistas = pageviewapi.per_article('en.wikipedia', info, '20000101', '20210101', access='all-access', agent='all-agents', granularity='daily')
     numero = 0
     for i in vistas["items"]:
