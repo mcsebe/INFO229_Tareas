@@ -4,9 +4,10 @@ services:
   api_web:
     build:
       context: .
-
+      args:
+        - DATABASE_IP=$DATABASE_IP
     ports:
-    - "8000:8000"
+    - "12333:12333"
     volumes:
     - /nfs:/nfs:shared
     container_name: api_web
